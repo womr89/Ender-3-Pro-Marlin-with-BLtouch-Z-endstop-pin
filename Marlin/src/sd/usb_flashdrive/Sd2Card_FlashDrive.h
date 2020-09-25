@@ -1,6 +1,6 @@
 /**
  * Marlin 3D Printer Firmware
- * Copyright (c) 2019 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
+ * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
  * Based on Sprinter and grbl.
  * Copyright (c) 2011 Camiel Gubbels / Erik van der Zalm
@@ -16,7 +16,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 #pragma once
@@ -57,13 +57,13 @@ class Sd2Card {
 
     static void idle();
 
-    inline bool readStart(const uint32_t block)                             { pos = block; return ready(); }
-    inline bool readData(uint8_t* dst)                                      { return readBlock(pos++, dst); }
-    inline bool readStop() const                                            { return true; }
+    inline bool readStart(const uint32_t block)                  { pos = block; return ready(); }
+    inline bool readData(uint8_t* dst)                           { return readBlock(pos++, dst); }
+    inline bool readStop() const                                 { return true; }
 
-    inline bool writeStart(const uint32_t block, const uint32_t eraseCount) { UNUSED(eraseCount); pos = block; return ready(); }
-    inline bool writeData(uint8_t* src)                                     { return writeBlock(pos++, src); }
-    inline bool writeStop() const                                           { return true; }
+    inline bool writeStart(const uint32_t block, const uint32_t) { pos = block; return ready(); }
+    inline bool writeData(uint8_t* src)                          { return writeBlock(pos++, src); }
+    inline bool writeStop() const                                { return true; }
 
     bool readBlock(uint32_t block, uint8_t* dst);
     bool writeBlock(uint32_t blockNumber, const uint8_t* src);

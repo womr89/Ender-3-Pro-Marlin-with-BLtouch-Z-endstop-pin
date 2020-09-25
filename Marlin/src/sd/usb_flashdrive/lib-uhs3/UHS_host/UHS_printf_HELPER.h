@@ -20,12 +20,12 @@ Contact information
 -------------------
 
 Circuits At Home, LTD
-Web      :  http://www.circuitsathome.com
+Web      :  https://www.circuitsathome.com
 e-mail   :  support@circuitsathome.com
  */
 
 #ifndef UHS_PRINTF_HELPER_H
-#define	UHS_PRINTF_HELPER_H
+#define UHS_PRINTF_HELPER_H
 
 #ifdef LOAD_UHS_PRINTF_HELPER
 #include <Arduino.h>
@@ -197,5 +197,4 @@ void UHS_AVR_printf_HELPER_init() {
 #ifndef UHS_printf_HELPER_init
 #define UHS_printf_HELPER_init() (void(0))
 #endif
-#endif	/* UHS_PRINTF_HELPER_H */
-
+#endif  /* UHS_PRINTF_HELPER_H */

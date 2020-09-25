@@ -1,6 +1,6 @@
 /**
  * Marlin 3D Printer Firmware
- * Copyright (c) 2019 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
+ * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
  * Based on Sprinter and grbl.
  * Copyright (c) 2011 Camiel Gubbels / Erik van der Zalm
@@ -16,7 +16,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 
@@ -138,8 +138,7 @@ void pca9632_set_led_color(const LEDColor &color) {
 
 #if ENABLED(PCA9632_BUZZER)
 
-  void pca9632_buzz(const long duration, const uint16_t freq) {
-    UNUSED(duration); UNUSED(freq);
+  void pca9632_buzz(const long, const uint16_t) {
     uint8_t data[] = PCA9632_BUZZER_DATA;
     Wire.beginTransmission(I2C_ADDRESS(PCA9632_ADDRESS));
     Wire.write(data, sizeof(data));

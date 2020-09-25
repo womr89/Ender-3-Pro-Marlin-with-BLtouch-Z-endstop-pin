@@ -20,7 +20,7 @@ Contact information
 -------------------
 
 Circuits At Home, LTD
-Web      :  http://www.circuitsathome.com
+Web      :  https://www.circuitsathome.com
 e-mail   :  support@circuitsathome.com
  */
 
@@ -390,4 +390,3 @@ e-mail   :  support@circuitsathome.com
 #define NOTUSED(...)  __VA_ARGS__ __attribute__((unused))
 #endif
 #endif /* MACROS_H */
-

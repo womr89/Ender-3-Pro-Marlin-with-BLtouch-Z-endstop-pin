@@ -1,6 +1,6 @@
 /**
  * Marlin 3D Printer Firmware
- * Copyright (c) 2019 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
+ * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
  * Based on Sprinter and grbl.
  * Copyright (c) 2011 Camiel Gubbels / Erik van der Zalm
@@ -16,13 +16,14 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 #pragma once
 
 #include "../inc/MarlinConfig.h"
 #include "../module/planner.h"
+#include "../module/thermistor/thermistors.h"
 
 class FilamentWidthSensor {
 public:
@@ -66,7 +67,7 @@ public:
   }
 
   // Convert raw measurement to mm
-  static inline float raw_to_mm(const uint16_t v) { return v * 5.0f * RECIPROCAL(16383.0f); }
+  static inline float raw_to_mm(const uint16_t v) { return v * 5.0f * RECIPROCAL(float(MAX_RAW_THERMISTOR_VALUE)); }
   static inline float raw_to_mm() { return raw_to_mm(raw); }
 
   // A scaled reading is ready
